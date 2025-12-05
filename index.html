@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Talk Practice – Speaking Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <audio id="globalAudio" style="display:none"></audio>
+</head>
+<body>
+<header>
+  <h1>Talk Practice</h1>
+  <nav>
+    <a data-section="home" class="active">Home</a>
+    <a data-section="idioms">Idioms</a>
+    <a data-section="chunks">Chunky Words</a>
+    <a data-section="dialogues">Dialogues</a>
+    <a data-section="daily">Daily</a>
+    <a data-section="progress">Progress</a>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- HOME -->
+  <section id="home" class="section">
+    <div class="card">
+      <h2>Welcome to Talk Practice</h2>
+      <p>This is a speaking trainer. You record your voice, get simple AI feedback and track your progress.</p>
+      <ul>
+        <li><strong>Idioms</strong> – 20 idioms with short speaking tasks.</li>
+        <li><strong>Chunky Words</strong> – 20 useful phrases for natural speech.</li>
+        <li><strong>Dialogues</strong> – 20 everyday topics with guided questions.</li>
+        <li><strong>Daily</strong> – new free-speaking task every day.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Today’s Goal</h2>
+      <p><span class="tag">Goal</span> Speak for at least <strong>5 minutes</strong> in total.</p>
+      <ol>
+        <li>Choose 2–3 idioms and record short stories.</li>
+        <li>Complete one dialogue.</li>
+        <li>Answer the daily speaking task.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- IDIOMS -->
+  <section id="idioms" class="section hidden">
+    <div class="card">
+      <h2>Idioms</h2>
+      <p><span class="tag">Goal</span> Use at least <strong>2 idioms</strong> in your 30–45 second story.</p>
+      <p>Press 🎤 Record, speak, then ⏹ Stop. Press ▶️ Listen to hear yourself and 🤖 AI to get feedback.</p>
+    </div>
+    <div id="idioms-list"></div>
+  </section>
+
+  <!-- CHUNKY WORDS -->
+  <section id="chunks" class="section hidden">
+    <div class="card">
+      <h2>Chunky Words</h2>
+      <p><span class="tag">Goal</span> Use <strong>5+ chunks</strong> in a 60–90 second answer.</p>
+      <p>These phrases help you sound more natural and confident.</p>
+    </div>
+    <div id="chunks-list"></div>
+  </section>
+
+  <!-- DIALOGUES -->
+  <section id="dialogues" class="section hidden">
+    <div class="card">
+      <h2>Dialogues</h2>
+      <p><span class="tag">Goal</span> Answer all questions in one 40–90 second recording.</p>
+    </div>
+    <div id="dialogues-list"></div>
+  </section>
+
+  <!-- DAILY -->
+  <section id="daily" class="section hidden">
+    <div class="card">
+      <h2>Daily Speaking</h2>
+      <p><span class="tag">Goal</span> Speak for <strong>60–120 seconds</strong>.</p>
+      <p id="daily-prompt"><em>Daily task will be generated here…</em></p>
+      <div class="controls">
+        <button class="btn" id="rec-daily">🎤 Record</button>
+        <button class="btn secondary" id="play-daily" disabled>▶️ Listen</button>
+        <button class="btn ai" data-ai data-expected="daily task"
+                data-result-id="ai-daily">🤖 AI</button>
+      </div>
+      <p id="stats-daily" class="mini-level"></p>
+      <div id="ai-daily" class="ai-result"></div>
+    </div>
+  </section>
+
+  <!-- PROGRESS -->
+  <section id="progress" class="section hidden">
+    <div class="card">
+      <h2>My Progress</h2>
+      <p><strong>Total speaking time:</strong> <span id="total-minutes">0</span> minutes</p>
+      <p><strong>Total sessions:</strong> <span id="total-sessions">0</span></p>
+      <ul>
+        <li>Idioms: <span id="count-idioms">0</span></li>
+        <li>Chunks: <span id="count-chunks">0</span></li>
+        <li>Dialogues: <span id="count-dialogues">0</span></li>
+        <li>Daily tasks: <span id="count-daily">0</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Badges</h2>
+      <div class="badges">
+        <span class="badge" id="badge-10min">10 minutes of speaking</span>
+        <span class="badge" id="badge-30min">30 minutes of speaking</span>
+        <span class="badge" id="badge-10sessions">10 sessions</span>
+        <span class="badge" id="badge-idiom-lover">Idiom Lover (5 idiom tasks)</span>
+        <span class="badge" id="badge-chunk-hero">Chunk Hero (5 chunk tasks)</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<button id="back-to-top" title="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
